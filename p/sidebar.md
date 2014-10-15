@@ -1,6 +1,8 @@
-# [袂卓工作室](.)
+![Meizhuo logo](./img/favicon.ico)
 
-> 北主楼16-08室
+# [袂卓工作室博客](.)
+
+> 联袂追求卓越
 
 - [Projects](projects/index.md)
 - [About](about.md)
