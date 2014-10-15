@@ -1,6 +1,6 @@
 silentor
 ========
->Be a silentor,just focus on mark your words down!
+>Be a silentor,just focus on marking your words down!
 
 开发缘由
 ===
@@ -9,20 +9,38 @@ silentor
 
 Features
 ===
-* markdown only .让你专注文章本身
+* markdown only ,让你专注文章本身
 * 无需后台,按照指定的地方写markdown就行了
 * Github CSS
+* 支持语法高亮
 
-
-
+使用
+===
+### 配置根目录的config.json
 ```json
-"silentor" = {
-    "author" : "Jayin",
-    "data" : "2014-10-14",
-    "thanks":"@fritx",
-    "License" :"Apache License v2",
+{
+    "app_name": "{输入你的项目名}"
 }
+
 ```
+
+### 设置图片
+我们约定在根目录下的img/下放置所有图片文件
+
+若markdown需要用到:
+```markdown
+![图片说明](./img/xxx.jpg)
+```
+
+### 根目录下的404.md就是找不页面时显示的内容
+若有需要，可以改写里面的内容
+
+### 更换语法高亮css
+```html
+//引入在vendor/highlight/styles下
+<link rel="stylesheet" href="vendor/highlight/styles/github.css">
+```
+
 
 License
 ===

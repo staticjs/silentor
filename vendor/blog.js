@@ -35,7 +35,14 @@
         console.log(p_url);
 
         $.get(p_url, function(data) {
+            marked.setOptions({
+                highlight: function(code) {
+                    return hljs.highlightAuto(code).value;
+                }
+            });
+
             $(selector).html(marked(data));
+            // hljs.initHighlightingOnLoad();
             //处理所有scr
             $(selector).find('[href]').each(function() {
                 var $element = $(this);

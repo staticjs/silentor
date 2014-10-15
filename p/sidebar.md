@@ -1,6 +1,6 @@
 ![Meizhuo logo](./img/favicon.ico)
 
-# [袂卓工作室博客](.)
+# [袂卓工作室](.)
 
 > 联袂追求卓越
 
