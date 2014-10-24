@@ -128,3 +128,10 @@ blockquote {
     width: 75%;
   }
 }
+
+/* 多说评论框*/
+.ds-thread{
+   padding-left: 0.9em;
+   padding-right: 0.9em;
+}
+

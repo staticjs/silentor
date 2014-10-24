@@ -65,6 +65,41 @@ see [Demo](http://meizhuo.github.io/silentor/)
 ### 网站分析
 你可以在`index.html`中嵌入你的google an
 
+
+### 加入社会化评论框
+**以多说为例**
+
+首先到`http://duoshuo.com/` 申请有账号
+然后进入后台获得通用评论框代码，放到index.html的`#main-page下`
+
+e.g:
+```html
+     <!-- main -->
+    <div class="main" id="main">
+        <div class="main-inner">
+            <div class="main-page markdown-body" id="main-page"></div>
+        </div>
+        <!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: "jayin"
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
+```
+
 License
 ===
     Copyright 2014 Meizhuo Lib
