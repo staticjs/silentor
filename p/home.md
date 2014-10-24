@@ -13,6 +13,7 @@ Features
 * 无需后台,按照指定的地方写markdown就行了
 * Github CSS
 * 支持语法高亮
+* 友好的移动端支持
 
 使用
 ===
