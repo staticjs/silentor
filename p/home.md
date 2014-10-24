@@ -16,13 +16,28 @@ Features
 
 使用
 ===
-### 配置根目录的config.json
+### 第一步：配置根目录的config.json
 ```json
 {
     "app_name": "{输入你的项目名}"
 }
 
 ```
+
+### 第二部步：创建gh-pages分支并 上传到Github
+```shell
+git init
+git checkout -b gh-pages
+git add --all 
+git commit -m 'my website'
+git push origin gh-pages
+//然后输入你的github账号,密码
+```
+
+see [Demo](http://meizhuo.github.io/silentor/)
+
+开发指南
+===
 
 ### 设置图片
 我们约定在根目录下的img/下放置所有图片文件
@@ -41,6 +56,14 @@ Features
 <link rel="stylesheet" href="vendor/highlight/styles/github.css">
 ```
 
+### 网站标题
+
+首先网站只有2部分，一个Sidebar，左侧的菜单栏,另外一个是右侧，主页栏
+网站标题默认是右侧内容页的第一行标题
+
+
+### 网站分析
+你可以在`index.html`中嵌入你的google an
 
 License
 ===
