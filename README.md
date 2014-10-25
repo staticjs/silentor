@@ -125,6 +125,9 @@ function init() {
 <script src="vendor/anim.js"></script>
 ```
 
+### 大小写
+github是有大小写敏感，大家一般遵循都小写的原则
+
 License
 ===
     Copyright 2014 Meizhuo Lib
