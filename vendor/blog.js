@@ -1,9 +1,7 @@
 (function($) {
-    $._config = {
-            'app_name': 'silentor',
-            'blog_base': '/silentor/p/', //博文相对url
-        }
-        //当前请求的markdown文件
+    var app_name = '';
+    var blog_base = '';
+    //当前请求的markdown文件
     var cur_md_path = '';
     /*是否是http:// 如果是，那么这是资源文件,如果否，说明这是要处理的a标签*/
     function isAbsolute(url) {
@@ -27,7 +25,7 @@
         //获得markdown的文件名,用作标题
     function getMarkdownTitle(file_path) {
             if (!isMarkdownFile(file_path)) {
-                return $._config['app_name'];
+                return app_name;
             } else {
                 var real_file_name = file_path;
                 if (hasFolder(file_path)) {
@@ -43,11 +41,14 @@
          * @param  baseUrl 基准url
          */
     function load(selector, file_path, isSidebar, baseUrl) {
-        baseUrl = baseUrl || $._config['blog_base'];
+        baseUrl = baseUrl || blog_base;
         isSidebar = isSidebar || false;
 
         var p_url = baseUrl + file_path;
 
+        console.log("load-->" + p_url);
+        console.log(blog_base);
+        console.log(app_name);
         $.get(p_url, function(data) {
             marked.setOptions({
                 highlight: function(code) {
@@ -84,43 +85,41 @@
 
         }).fail(function(err) {
             if (err.status === 404) {
-                load('#main-page', '404.md', false, '/' + $._config.app_name + '/');
+                console.log('404-->' + '/' + app_name + '/');
+                console.log($._c);
+                load('#main-page', '404.md', false, '/' + app_name + '/');
             }
         });
     }
 
     function read_config(callback) {
         $.getJSON('config.json', {}, function(data) {
-            $._config.app_name = data.app_name || $._config.app_name;
-            $._config['blog_base'] = '/' + $._config.app_name + '/p/';
+            app_name = data.app_name || app_name;
+            blog_base = '/' + app_name + '/p/';
+            console.log('---read config');
+            console.log(app_name + ' : ' + blog_base);
             callback();
         }).fail(function(err) {
             alert('读取配置有误');
         });
     }
 
-    function init() {
-        read_config(function() {
-            load('#sidebar-page', 'sidebar.md', true);
+    function main() {
 
+        read_config(function() {
+            //加载侧边菜单栏
+            load('#sidebar-page', 'sidebar.md', true);
+            //加载主内容页
+            cur_md_path = location.search.slice(1, location.search.length);
             if (cur_md_path === '') {
                 load('#main-page', 'home.md');
                 console.log("load main~");
                 //多说评论,若想不在首页显示评论框 那么：取消这一句注释
                 //$('.ds-thread').removeClass('ds-thread');
-            }
-        });
-
-    }
-
-    function main() {
-        if (location.search) {
-            cur_md_path = location.search.slice(1, location.search.length);
-            if (cur_md_path) {
+            } else {
                 load('#main-page', cur_md_path);
             }
-        }
-        init();
+        });
     }
 
     main();
