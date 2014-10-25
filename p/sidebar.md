@@ -4,6 +4,6 @@
 
 > 联袂追求卓越
 
-- [Projects](projects/index.md)
-- [About](about.md)
-- [袂卓招新](袂卓招新.md)
+- [项目](projects/index.md)
+- [专业](profession.md)
+- [关于](about.md)

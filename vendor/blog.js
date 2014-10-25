@@ -26,16 +26,13 @@
         }
         //获得markdown的文件名,用作标题
     function getMarkdownTitle(file_path) {
-            console.log("-getMarkdownTitle->" + file_path);
             if (!isMarkdownFile(file_path)) {
                 return $._config['app_name'];
             } else {
                 var real_file_name = file_path;
                 if (hasFolder(file_path)) {
                     real_file_name = file_path.slice(file_path.lastIndexOf('/') + 1, file_path.length);
-                    console.log(real_file_name);
                 }
-                console.log(real_file_name.split('.')[0]);
                 return real_file_name.split('.')[0];
             }
         }
@@ -50,7 +47,6 @@
         isSidebar = isSidebar || false;
 
         var p_url = baseUrl + file_path;
-        console.log('p_url-->' + p_url);
 
         $.get(p_url, function(data) {
             marked.setOptions({
@@ -99,7 +95,7 @@
             $._config['blog_base'] = '/' + $._config.app_name + '/p/';
             callback();
         }).fail(function(err) {
-            console.log('错误码: ' + err.status);
+            alert('读取配置有误');
         });
     }
 
@@ -110,6 +106,8 @@
             if (cur_md_path === '') {
                 load('#main-page', 'home.md');
                 console.log("load main~");
+                //多说评论,若想不在首页显示评论框 那么：取消这一句注释
+                //$('.ds-thread').removeClass('ds-thread');
             }
         });
 

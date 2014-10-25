@@ -101,6 +101,23 @@ e.g:
     </div>
 ```
 
+**如果想在网站首页不显示评论,如何做？**
+```javascript
+//blog.js
+function init() {
+    read_config(function() {
+        load('#sidebar-page', 'sidebar.md', true);
+
+        if (cur_md_path === '') {
+            load('#main-page', 'home.md');
+            console.log("load main~");
+            //多说评论,若想不在首页显示评论框 那么：取消这一句注释
+            //$('.ds-thread').removeClass('ds-thread');
+        }
+    });
+}
+```
+
 License
 ===
     Copyright 2014 Meizhuo Lib
