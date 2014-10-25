@@ -98,7 +98,6 @@ blockquote {
   .sidebar-inner li {
         display: inline-block;
         margin-left: 1em;
-        float: : left;
     }
 }
 @media (max-width: 640px) {
