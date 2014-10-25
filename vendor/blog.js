@@ -7,13 +7,6 @@
     function isAbsolute(url) {
             return url.indexOf('//') !== -1;
         }
-        /*是否包含文件夹*/
-    function hasFolder(url) {
-            //false :`xxx.md` 
-            // true : `yy/xx.md`
-            var path = url.slice(1, url.length);
-            return path.indexOf('/') !== -1;
-        }
         /*获得相对目录*/
     function getPageBase(url) {
             return url.slice(0, url.lastIndexOf('/') + 1);
@@ -73,7 +66,7 @@
                 }
 
                 //main page
-                if (!isAbsolute(url) && !isSidebar && isMarkdownFile(url) && hasFolder(url)) {
+                if (!isAbsolute(url) && !isSidebar && isMarkdownFile(url) ) {
                     $element.attr('href', '?' + getPageBase(cur_md_path) + url);
                 }
             });
