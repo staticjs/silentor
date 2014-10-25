@@ -72,12 +72,11 @@ blockquote {
     text-decoration: none;
 }
 .sidebar-inner li {
-   padding-top: 4px;
+    padding-top: 4px;
 }
 .sidebar a {
     color: #fff;
 }
-
 .sidebar h1 a {
     text-decoration: none;
 }
@@ -95,6 +94,13 @@ blockquote {
     top: -9999px;
     left: -9999px;
 }
+@media (max-width: 480px){
+  .sidebar-inner li {
+        display: inline-block;
+        margin-left: 1em;
+        float: : left;
+    }
+}
 @media (max-width: 640px) {
     pre {
         font-size: 80%;
@@ -106,12 +112,13 @@ blockquote {
         padding: 2% 10%;
     }
     .main-inner {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     .sidebar img {
         display: none
     }
+  
 }
 @media (min-width: 990px) {
     .sidebar {
@@ -130,6 +137,7 @@ blockquote {
     }
 }
 /* 多说评论框*/
+
 .ds-thread {
     padding-left: 1em;
     padding-right: 1em;
