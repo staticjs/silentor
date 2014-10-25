@@ -118,6 +118,13 @@ function init() {
 }
 ```
 
+### 导航栏动画
+//注释掉下面的可以删除该动画
+```html
+<!-- 可选的动画 -->
+<script src="vendor/anim.js"></script>
+```
+
 License
 ===
     Copyright 2014 Meizhuo Lib
