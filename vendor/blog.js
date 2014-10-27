@@ -103,7 +103,7 @@
             //加载侧边菜单栏
             load('#sidebar-page', 'sidebar.md', true);
             //加载主内容页
-            cur_md_path = location.search.slice(1, location.search.length);
+            cur_md_path = location.search.slice(1,  location.search.indexOf('&'));
             if (cur_md_path === '') {
                 load('#main-page', 'home.md');
                 console.log("load main~");
